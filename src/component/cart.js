@@ -1,7 +1,7 @@
-function Cart({checkoutList}) {
+function Cart({checkoutList,checkout}) {
   return (
     <div className="cartContainer">
-      <span className="cart">Checkout {checkoutList.length} Items</span>
+      <span onClick={checkout} className="cart">Checkout {checkoutList.length} Items</span>
     </div>
   );
 }

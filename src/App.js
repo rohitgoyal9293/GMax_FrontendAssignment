@@ -42,15 +42,18 @@ function App() {
     let updatedItemsInCart = [...itemsInCart]
     updatedCheckoutList = updatedCheckoutList.filter((item)=> item.id !== id)
     updatedItemsInCart = updatedItemsInCart.filter((item) => item !== id)
-    console.log('updatedItemsInCart:::', updatedItemsInCart)
     setCheckoutList(updatedCheckoutList)
     setItemsInCart(updatedItemsInCart)
+  }
+
+  const checkout = () =>{
+    console.log('checkout items are:::', checkoutList)
   }
 
   return (
     <div className="App">
      
-      <Cart checkoutList={checkoutList} />
+      <Cart checkoutList={checkoutList} checkout={checkout} />
       <Search searchContactByName={searchContactByName} />
       <Products 
         productList={productList}
